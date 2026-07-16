@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Booking = require('../models/Booking');
+const booking = require('../models/Booking');
 const User = require('../models/User');
 
 // 1. CREATE BOOKING (Nayi booking banana)
@@ -14,7 +14,7 @@ router.post('/create', async (req, res) => {
       return res.status(404).json({ message: 'User not found!' });
     }
 
-    const newBooking = await Booking.create({
+    const newbooking = await booking.create({
       userId,
       itemName,
       bookingDate
