@@ -1,13 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: booking-ui-deployment
+  name: booking-backend-service
   labels:
     app: booking-backend
 spec:
   type: ClusterIP
   selector:
-  app: booking-backend
+    app: booking-backend
   ports:
     - port: 5000
       targetPort: 5000
