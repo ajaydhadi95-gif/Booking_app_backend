@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../models/user');
 
 // 1. REGISTER ROUTE (Sign up)
 router.post('/register', async (req, res) => {
@@ -30,12 +30,12 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// 2. LOGIN ROUTE
+
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Email se user dhundhein
+    
     const user = await User.findOne({ where: { email } });
     if (!user) {
       return res.status(400).json({ message: 'Invalid Email or Password!' });
