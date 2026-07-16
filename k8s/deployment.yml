@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: booking-ui-deployment
+  name: booking-backend-deployment
   labels:
     app: booking-backend
 spec:
