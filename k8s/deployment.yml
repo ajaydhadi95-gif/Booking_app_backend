@@ -4,7 +4,8 @@ metadata:
   name: booking-ui-deployment
   labels:
     app: booking-backend
-spec: replicas: 3
+spec:
+  replicas: 3
   selector:
     matchLabels:
       app: booking-backend

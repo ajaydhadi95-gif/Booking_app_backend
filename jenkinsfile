@@ -35,8 +35,9 @@ pipeline {
             steps {
                 script {
                     echo "Applying Kubernetes manifests..."
-                    sh "kubectl apply -f k8s/deployment.yaml"
-                    sh "kubectl apply -f k8s/service.yaml"
+                    
+                    sh "kubectl apply -f Backend/k8s/deployment.yaml"
+                    sh "kubectl apply -f Backend/k8s/service.yaml"
                     
                     echo "Triggering Kubernetes rolling update..."
                     sh "kubectl set image deployment/booking-backend-deployment booking-backend=${DOCKER_IMAGE}:${BUILD_NUMBER}"
@@ -46,7 +47,6 @@ pipeline {
                 }
             }
         }
-    }
 
     post {
         always {
